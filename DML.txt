@@ -1,0 +1,18 @@
+INSERT INTO Campuses(Campus, University)
+VALUES ("Juneau", "UAS"), ("Sitka", "UAS"), ("Ketchikan", "UAS"),
+("Anchorage", "UAA"), ("Palmer", "UAA"), ("Kodiak", "UAA"), ("Valdez", "UAA"), ("Kenai", "UAA"),
+("Nome", "UAF"), ("Bethel", "UAF"), ("Fairbanks", "UAF");
+
+INSERT INTO `Student`(ID, First_Name, Last_Name, Major, Minor, Grade, GPA, Campus, Gender)
+VALUES (101, "Tommy", "Calzone", "Math", "History", "Junior", 3.8, "Juneau", "Male"),
+(207, "Mandy", "Blake", "Computer Science", "Japanese", "Senior", 3.8, "Nome", "Female"),
+(255, "Angel", "Foodcake", "Chemistry", "German", "Freshman", 1.6, "Anchorage", "Female"),
+(444, "October", "December", "Japanese", "Communications", "Sophomore", 2.8, "Fairbanks", "Other"),
+(111, "Chris", "High", "History", "Undeclared", "Senior", 4.0, "Sitka", "Male");
+
+INSERT INTO `Professor`(ID, First_Name, Last_Name, Department, Campus, Gender)
+VALUES (180, "Debra", "Long", "History", "Juneau", "Female"),
+(225, "Alexandra", "Tomson", "Chemistry", "Anchorage", "Female"),
+(300, "Tyrone", "White", "Math", "Nome", "Male"),
+(222, "August", "Hildabrand", "Music", "Anchorage", "Other"),
+(179, "Matthew", "Vejar", "Math", "Juneau", "Male");

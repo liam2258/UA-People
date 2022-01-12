@@ -1,0 +1,32 @@
+CREATE SCHEMA `uamanagement` ;
+
+CREATE TABLE Campuses (
+    University varchar(50) NOT NULL,
+    Campus varchar (50) NOT NULL,
+    PRIMARY KEY (Campus)
+    );
+
+CREATE TABLE Student (
+    ID int NOT NULL,
+    First_Name varchar (30) NOT NULL,
+    Last_Name varchar(30) NOT NULL,
+    Major varchar(30),
+    Minor varchar(30),
+    Grade varchar(30),
+    GPA float(4),
+    Campus varchar(50) NOT NULL,
+    Gender varchar(10),
+    PRIMARY KEY (ID),
+    FOREIGN KEY(Campus) REFERENCES Campuses (Campus)
+    );
+
+CREATE TABLE Professor (
+    ID int NOT NULL,
+    First_Name varchar (30) NOT NULL,
+    Last_Name varchar(30) NOT NULL,
+    Department varchar(50),
+    Campus varchar(50) NOT NULL,
+    Gender varchar(10),
+    PRIMARY KEY (ID),
+    FOREIGN KEY(Campus) REFERENCES Campuses (Campus)
+    );
