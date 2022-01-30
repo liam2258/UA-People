@@ -7,10 +7,9 @@
 using namespace std;
 
 //Can be replaced with any SQL server, "tcp://"Your sever here":"Your server port number here"
-//AWS test server and login for demostration purposes
-const string server = "tcp://aws.cillda3dtopi.us-east-2.rds.amazonaws.com:3306";
-const string username = "admin";
-const string password = "mypassword";
+const string server = "tcp://localhost:3306";
+const string username = "root";
+const string password = "lyman089";
 
 //Function that prints the students selected from the database
 bool PrintStudents(sql::ResultSet* result) {
