@@ -4,7 +4,9 @@
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/prepared_statement.h>
+#include <iomanip>
 using namespace std;
+using std::setw;
 
 //Can be replaced with any SQL server, "tcp://"Your sever here":"Your server port number here"
 const string server = "tcp://localhost:3306";
@@ -14,17 +16,17 @@ const string password = "lyman089";
 //Function that prints the students selected from the database
 bool PrintStudents(sql::ResultSet* result) {
 	bool empty = true;
+
+	cout << left << setw(10) << "ID" << setw(15) << "First Name" << setw(15) << "Last Name" << setw(15) << "Major" <<
+		setw(15) << "Minor" << setw(15) << "Year" << setw(15) << "GPA" << setw(15) << "Campus" << setw(15) << "Gender" << endl;
+
 	while (result->next()) {
 		empty = false;
-		cout << "ID: " << result->getString(1).c_str() << " "
-			<< "First Name: " << result->getString(2).c_str() << " "
-			<< "Last Name: " << result->getString(3).c_str() << " "
-			<< "Major: " << result->getString(4).c_str() << " "
-			<< "Minor: " << result->getString(5).c_str() << " "
-			<< "Year: " << result->getString(6).c_str() << " "
-			<< "GPA: " << result->getDouble(7) << " "
-			<< "Campus: " << result->getString(8).c_str() << " "
-			<< "Gender: " << result->getString(9).c_str() << endl;
+
+		cout << left << setw(10) << result->getString(1).c_str() << setw(15) << result->getString(2).c_str() << setw(15) <<
+			result->getString(3).c_str() << setw(15) << result->getString(4).c_str() <<
+			setw(15) << result->getString(5).c_str() << setw(15) << result->getString(6).c_str() <<
+			setw(15) << result->getDouble(7) << setw(15) << result->getString(8).c_str() << setw(15) << result->getString(9).c_str() << endl;
 	}
 	return empty;
 }
@@ -33,14 +35,15 @@ bool PrintStudents(sql::ResultSet* result) {
 //Function that prints the professors selected from the database
 bool PrintProfessors(sql::ResultSet* result) {
 	bool empty = true;
+
+	cout << left << setw(10) << "ID" << setw(15) << "First Name" << setw(15) << "Last Name" << setw(15) << "Department" <<
+			setw(15) << "Campus" << setw(15) << "Gender" << endl;
+
 	while (result->next()) {
 		empty = false;
-		cout << "ID: " << result->getString(1).c_str() << " "
-			<< "First Name: " << result->getString(2).c_str() << " "
-			<< "Last Name: " << result->getString(3).c_str() << " "
-			<< "Department: " << result->getString(4).c_str() << " "
-			<< "Campus: " << result->getString(5).c_str() << " "
-			<< "Gender: " << result->getString(6).c_str() << endl;
+		cout << left << setw(10) << result->getString(1).c_str() << setw(15) << result->getString(2).c_str() << setw(15) << 
+				result->getString(3).c_str() << setw(15) << result->getString(4).c_str() <<
+				setw(15) << result->getString(5).c_str() << setw(15) << result->getString(6).c_str() << endl;
 	}
 	return empty;
 }
@@ -54,7 +57,7 @@ void PrintDepartments() {
 	cout << "5: Chemistry" << endl;
 	cout << "6: Japanese" << endl;
 	cout << "7: German" << endl;
-	cout << "8: Computer Science" << endl;
+	cout << "8: CS" << endl;
 	cout << "9: Communications" << endl;
 	cout << "10: Undeclared" << endl;
 }
@@ -78,7 +81,7 @@ string SelectDepartment(int i) {
 	case 7:
 		return("German");
 	case 8:
-		return("Computer Science");
+		return("CS");
 	case 9:
 		return("Communications");
 	case 10:
