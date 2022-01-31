@@ -5,7 +5,7 @@ VALUES ("Juneau", "UAS"), ("Sitka", "UAS"), ("Ketchikan", "UAS"),
 
 INSERT INTO `Student`(ID, First_Name, Last_Name, Major, Minor, Grade, GPA, Campus, Gender)
 VALUES (101, "Tommy", "Calzone", "Math", "History", "Junior", 3.8, "Juneau", "Male"),
-(207, "Mandy", "Blake", "Computer Science", "Japanese", "Senior", 3.8, "Nome", "Female"),
+(207, "Mandy", "Blake", "CS", "Japanese", "Senior", 3.8, "Nome", "Female"),
 (255, "Angel", "Foodcake", "Chemistry", "German", "Freshman", 1.6, "Anchorage", "Female"),
 (444, "October", "December", "Japanese", "Communications", "Sophomore", 2.8, "Fairbanks", "Other"),
 (111, "Chris", "High", "History", "Undeclared", "Senior", 4.0, "Sitka", "Male");
