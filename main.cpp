@@ -10,8 +10,8 @@ using std::setw;
 
 //Can be replaced with any SQL server, "tcp://"Your sever here":"Your server port number here"
 const string server = "tcp://localhost:3306";
-const string username = "root";
-const string password = "lyman089";
+const string username = "username";
+const string password = "password";
 
 //Function that prints the students selected from the database
 bool PrintStudents(sql::ResultSet* result) {
